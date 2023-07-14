@@ -1,0 +1,27 @@
+Language used: Python
+
+My annotated solution:
+
+
+class Solution(object):
+    def singleNumber(self, nums):
+
+        dictionary = {}  # initialize an empty dictionary
+
+        for num in nums:  # iterate over the numbers in the array
+            dictionary[num] = dictionary.get(num, 0) + 1
+            # use the .get method to find the value of a num and increment count of num each time it appears.
+
+        for single_val, element_val in dictionary.items():  # check through values after incrementation
+            if element_val == 1:  # if the value occurs only once
+                return single_val  # return the value that has only occured once
+
+
+Thought process:
+
+- I'm going to need to iterate through each array of values and some how return the value that appears once
+- A for loop is going to be fantastic given that we are provided a specific set of values
+- How am I going to find a specific value that only occurs once? 
+- Assigning a boolean value of true or false to element values could be useful
+- I could potentially assign values based on the number of times it occurs as well. 
+
